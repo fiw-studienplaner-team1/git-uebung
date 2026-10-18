@@ -1,0 +1,17 @@
+name: Steckbrief-Check
+on: pull_request
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Steckbriefe prüfen
+        run: |
+          for f in team/*.md; do
+            if [ ! -s "$f" ]; then echo "Datei ist leer: $f"; exit 1; fi
+            if ! head -n 1 "$f" | grep -q '^# '; then
+              echo "Erste Zeile muss mit '# Name' beginnen: $f"; exit 1
+            fi
+          done
+          echo "Alle Steckbriefe sind in Ordnung"

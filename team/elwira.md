@@ -1,6 +1,5 @@
 # Elwira
 
-- Rolle im Team: Deloper
+- Rolle im Team: Developer
 - Stärken: Prozesse
 - Lieblings-Feature im Studienplaner: Modulplaner
-- und Extra Fehelr -> Reviewer bitte letzt Zeile löschen! 
